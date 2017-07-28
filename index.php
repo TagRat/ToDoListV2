@@ -33,7 +33,7 @@ if ($action == 'list_tasklists') {
     if ($tasklist_id == NULL || $tasklist_id == FALSE) {
         $error = "Missing or incorrect tasklist id or todo id.";
         echo "$todo_id, $tasklist_id";
-        include('errors/error.php');
+        include('/~wt49/todo/errors/error.php');
     } else { 
         delete_tasklist($tasklist_id);
         header("Location: .?todo_id=$todo_id");
@@ -49,7 +49,7 @@ if ($action == 'list_tasklists') {
     $status = filter_input(INPUT_POST, 'status');
     if ($todo_id == NULL || $todo_id == FALSE || $name == NULL) {
         $error = "Invalid tasklist data. Check all fields and try again.";
-        include('errors/error.php');
+        include('/~wt49/todo/errors/error.php');
     } else { 
         add_tasklist($todo_id, $name, $status);
           
@@ -65,7 +65,7 @@ if ($action == 'list_tasklists') {
     if ($name == NULL) {
         $error = "Invalid todo name. Check name and try again.";
         echo "$error";
-      include('errors/error.php');
+      include('/~wt49/todo/errors/error.php');
     } else {
         add_todo($name);
       header('Location: .?action=list_todos');  

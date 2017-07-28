@@ -4,7 +4,7 @@
 <head>
     <title>Simple To Do List</title>
     <link rel="stylesheet" type="text/css"
-          href="../main.css">
+          href="/~wt49/todo/main.css">
 </head>
 
 <!-- the body section -->

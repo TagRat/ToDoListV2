@@ -14,16 +14,16 @@
             </option>
         <?php endforeach; ?>
         </select>
-        <br>
+        <br><br>
 
         
-        <label>Task:</label>
+        <label>Tasks: </label>
         <input type="text" name="name" />
-        <br>
+        <br><br>
 
         <label>Status:</label>
         <input type="text" name="status" />
-        <br>
+        <br><br>
 
         <label>&nbsp;</label>
         <input type="submit" value="Add Task" />
