@@ -1,4 +1,7 @@
-<?php include 'view/header.php'; ?>
+<?php include 'view/header.php'; 
+// Displays all To do lists and allows for the creation of a new list or deletion of existing list.
+
+?>
 <main>
 
     <h1>To Do Lists</h1>

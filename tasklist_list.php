@@ -1,4 +1,7 @@
-<?php include 'view/header.php'; ?>
+<?php include 'view/header.php'; 
+// Dispalys To do and creates a table of taskslists on click. Allows for tasklist deletion
+
+?>
 <main>
     <h1>To Dos</h1>
 

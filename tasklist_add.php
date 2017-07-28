@@ -1,4 +1,6 @@
-<?php include 'view/header.php'; ?>
+<?php include 'view/header.php'; 
+// Creates add new to do lit item form sends input back to index.php and envokes add_tasklist
+?>
 <main>
     <h1>Add New To Do List Item</h1>
     <form action="index.php" method="post" id="add_tasklist_form">

@@ -1,7 +1,11 @@
 <?php
+// Pulls in required files for funtions and database connectivity
+
 require('model/database.php');
 require('model/tasklist_db.php');
 require('model/todolist_db.php');
+
+// default action on initial page load 
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
@@ -10,6 +14,8 @@ if ($action == NULL) {
         $action = 'list_tasklists';
     }
 }
+
+// additional action repsonses that take form or button input and pass parameters to needed funtions - tests for required input as needed
 
 if ($action == 'list_tasklists') {
     $todo_id = filter_input(INPUT_GET, 'todo_id', 
