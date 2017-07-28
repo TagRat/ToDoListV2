@@ -13,20 +13,20 @@
             <td>
                 <form action="index.php" method="post">
                     <input type="hidden" name="action" value="delete_todo" />
-                    <input type="hidden" name="todolist_id"
-                           value="<?php echo $todolist['todoID']; ?>"/>
+                    <input type="hidden" name="todo_id"
+                           value="<?php echo $todolist['todoID']; ?>"/>   
                     <input type="submit" value="Delete"/>
                 </form>
             </td>
             
-            <td>
+         <!--   <td>
                 <form action="index.php" method="post">
                     <input type="hidden" name="action" value="update_todo" />
                     <input type="hidden" name="todolist_id"
                            value="<?php echo $todolist['todoID']; ?>"/>
                     <input type="submit" value="Rename"/>
                 </form>
-            </td>
+            </td> -->
         </tr>
         <?php endforeach; ?>
     </table>

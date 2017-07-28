@@ -24,11 +24,9 @@ if ($action == 'list_tasklists') {
 } else if ($action == 'delete_tasklist') {
     $tasklist_id = filter_input(INPUT_POST, 'tasklist_id', 
             FILTER_VALIDATE_INT);
-    $todo_id = filter_input(INPUT_POST, 'todo_id', 
-            FILTER_VALIDATE_INT);
-    if ($todo_id == NULL || $todo_id == FALSE ||
-            $tasklist_id == NULL || $tasklist_id == FALSE) {
+    if ($tasklist_id == NULL || $tasklist_id == FALSE) {
         $error = "Missing or incorrect tasklist id or todo id.";
+        echo "$todo_id, $tasklist_id";
         include('errors/error.php');
     } else { 
         delete_tasklist($tasklist_id);
@@ -70,6 +68,6 @@ if ($action == 'list_tasklists') {
     $todo_id = filter_input(INPUT_POST, 'todo_id', 
             FILTER_VALIDATE_INT);
     delete_todo($todo_id);
-     header('Location: .?action=list_todos');      
+    header('Location: .?action=list_todos');      
 }
 ?>
