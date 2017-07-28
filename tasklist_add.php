@@ -1,14 +1,14 @@
 <?php include 'view/header.php'; ?>
 <main>
     <h1>Add New To Do List Item</h1>
-    <form action="index.php" method="post" id="add_product_form">
-        <input type="hidden" name="action" value="add_product">
+    <form action="index.php" method="post" id="add_tasklist_form">
+        <input type="hidden" name="action" value="add_tasklist">
 
         <label>To Do List:</label>
-        <select name="category_id">
-        <?php foreach ( $categories as $category ) : ?>
-            <option value="<?php echo $category['categoryID']; ?>">
-                <?php echo $category['categoryName']; ?>
+        <select name="todo_id">
+        <?php foreach ( $todos as $todo ) : ?>
+            <option value="<?php echo $todo['todoID']; ?>">
+                <?php echo $todo['todoName']; ?>
             </option>
         <?php endforeach; ?>
         </select>
@@ -28,7 +28,7 @@
         <br>
     </form>
     <p class="last_paragraph">
-        <a href="index.php?action=list_products">Home</a>
+        <a href="index.php?action=list_tasklists">Home</a>
     </p>
 
 </main>

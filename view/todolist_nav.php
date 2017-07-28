@@ -1,12 +1,12 @@
 
         <nav>
             <ul>
-                <!-- display links for all categories -->
-                <?php foreach($categories as $category) : ?>
+                <!-- display links for all todos -->
+                <?php foreach($todos as $todo) : ?>
                 <li>
-                    <a href="?category_id=<?php 
-                              echo $category['categoryID']; ?>">
-                        <?php echo $category['categoryName']; ?>
+                    <a href="?todo_id=<?php 
+                              echo $todo['todoID']; ?>">
+                        <?php echo $todo['todoName']; ?>
                     </a>
                 </li>
                 <?php endforeach; ?>

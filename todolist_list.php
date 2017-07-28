@@ -7,23 +7,23 @@
             <th>Name</th>
             <th>&nbsp;</th>
         </tr>
-        <?php foreach ($categories as $todolist) : ?>
+        <?php foreach ($todos as $todolist) : ?>
         <tr>
-            <td><?php echo $todolist['todolistName']; ?></td>
+            <td><?php echo $todolist['todoName']; ?></td>
             <td>
                 <form action="index.php" method="post">
-                    <input type="hidden" name="action" value="delete_todolist" />
+                    <input type="hidden" name="action" value="delete_todo" />
                     <input type="hidden" name="todolist_id"
-                           value="<?php echo $todolist['todolistID']; ?>"/>
+                           value="<?php echo $todolist['todoID']; ?>"/>
                     <input type="submit" value="Delete"/>
                 </form>
             </td>
             
             <td>
                 <form action="index.php" method="post">
-                    <input type="hidden" name="action" value="update_todolist" />
+                    <input type="hidden" name="action" value="update_todo" />
                     <input type="hidden" name="todolist_id"
-                           value="<?php echo $todolist['todolistID']; ?>"/>
+                           value="<?php echo $todolist['todoID']; ?>"/>
                     <input type="submit" value="Rename"/>
                 </form>
             </td>
@@ -34,7 +34,7 @@
     <h2>Add New To Do List</h2>
     <form id="add_todolist_form"
           action="index.php" method="post">
-        <input type="hidden" name="action" value="add_todolist" />
+        <input type="hidden" name="action" value="add_todo" />
 
         <label>Name:</label>
         <input type="text" name="name" />

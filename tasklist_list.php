@@ -10,7 +10,7 @@
 
     <section>
         <!-- display a table of tasklists -->
-        <h2><?php echo $todolist_name; ?></h2>
+        <h2><?php echo $todo_name; ?></h2>
         <table>
             <tr>
                 <th>Task</th>
@@ -19,7 +19,7 @@
             </tr>
             <?php foreach ($tasklists as $tasklist) : ?>
             <tr>
-                <td><?php echo $tasklist['tasklistName']; ?></td>
+                <td><?php echo $tasklist['taskName']; ?></td>
                 <td class="right"><?php echo $tasklist['status']; ?></td>
                 <td><form action="." method="post">
                     <input type="hidden" name="action"

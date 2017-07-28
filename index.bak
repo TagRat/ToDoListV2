@@ -12,64 +12,63 @@ if ($action == NULL) {
 }
 
 if ($action == 'list_tasklists') {
-    $todo_id = filter_input(INPUT_GET, 'todo_id', 
+    $todolist_id = filter_input(INPUT_GET, 'todolist_id', 
             FILTER_VALIDATE_INT);
-    if ($todo_id == NULL || $todo_id == FALSE) {
-        $todo_id = 1;
+    if ($todolist_id == NULL || $todolist_id == FALSE) {
+        $todolist_id = 1;
     }
-    $todo_name = get_todo_name($todo_id);
+    $todolist_name = get_todolist_name($todolist_id);
     $todos = get_todos();
-    $tasklists = get_tasklists_by_todo($todo_id);
+    $tasklists = get_tasklists_by_todolist($todolist_id);
     include('tasklist_list.php');
 } else if ($action == 'delete_tasklist') {
     $tasklist_id = filter_input(INPUT_POST, 'tasklist_id', 
             FILTER_VALIDATE_INT);
-    $todo_id = filter_input(INPUT_POST, 'todo_id', 
+    $todolist_id = filter_input(INPUT_POST, 'todolist_id', 
             FILTER_VALIDATE_INT);
-    if ($todo_id == NULL || $todo_id == FALSE ||
+    if ($todolist_id == NULL || $todolist_id == FALSE ||
             $tasklist_id == NULL || $tasklist_id == FALSE) {
-        $error = "Missing or incorrect tasklist id or todo id.";
+        $error = "Missing or incorrect tasklist id or todolist id.";
         include('errors/error.php');
     } else { 
         delete_tasklist($tasklist_id);
-        header("Location: .?todo_id=$todo_id");
+        header("Location: .?todolist_id=$todolist_id");
     }
 } else if ($action == 'show_add_form') {
     $todos = get_todos();
     include('tasklist_add.php');
 
 } else if ($action == 'add_tasklist') {
-    $todo_id = filter_input(INPUT_POST, 'todo_id', 
+    $todolist_id = filter_input(INPUT_POST, 'todolist_id', 
             FILTER_VALIDATE_INT);
     $name = filter_input(INPUT_POST, 'name');
     $status = filter_input(INPUT_POST, 'status');
-    if ($todo_id == NULL || $todo_id == FALSE || $name == NULL) {
+    if ($todolist_id == NULL || $todolist_id == FALSE || $name == NULL) {
         $error = "Invalid tasklist data. Check all fields and try again.";
         include('errors/error.php');
     } else { 
-        add_tasklist($todo_id, $name, $status);
+        add_tasklist($todolist_id, $name, $status);
           
-        header("Location: .?todo_id=$todo_id");
+        header("Location: .?todolist_id=$todolist_id");
     }
 } else if ($action == 'list_todos') {
     $todos = get_todos();
     include('todolist_list.php');
-} else if ($action == 'add_todo') {
+} else if ($action == 'add_todolist') {
     $name = filter_input(INPUT_POST, 'name');
 
     // Validate inputs
     if ($name == NULL) {
-        $error = "Invalid todo name. Check name and try again.";
-        echo "$error";
-      include('errors/error.php');
+        $error = "Invalid todolist name. Check name and try again.";
+        include('view/error.php');
     } else {
-        add_todo($name);
-      header('Location: .?action=list_todos');  
+        add_todolist($name);
+        header('Location: .?action=list_todos');  
     }
-} else if ($action == 'delete_todo') {
-    $todo_id = filter_input(INPUT_POST, 'todo_id', 
+} else if ($action == 'delete_todolist') {
+    $todolist_id = filter_input(INPUT_POST, 'todolist_id', 
             FILTER_VALIDATE_INT);
-    delete_todo($todo_id);
-     header('Location: .?action=list_todos');      
+    delete_todolist($todolist_id);
+    header('Location: .?action=list_todos');      
 }
 ?>

@@ -1,6 +1,5 @@
 <?php
-function get_
-tasklists_by_todo($todo_id) {
+function get_tasklists_by_todo($todo_id) {
     global $db;
     $query = 'SELECT * FROM tasklist
               WHERE todoID = :todo_id
@@ -38,7 +37,7 @@ function delete_tasklist($tasklist_id) {
 function add_tasklist($todo_id, $name, $status) {
     global $db;
     $query = 'INSERT INTO tasklist
-                 (todoID, tasklistName, status)
+                 (todoID, taskName, status)
               VALUES
                  (:todo_id, :name, :status)';
     $statement = $db->prepare($query);
