@@ -1,7 +1,7 @@
 <?php include 'view/header.php'; ?>
 <main>
 
-    <h1>Category List</h1>
+    <h1>To Do Lists</h1>
     <table>
         <tr>
             <th>Name</th>
@@ -32,7 +32,7 @@
         <input type="submit" value="Add"/>
     </form>
 
-    <p><a href="index.php?action=list_products">List Products</a></p>
+    <p><a href="index.php?action=list_products">Home</a></p>
 
 </main>
-<?php include '../view/footer.php'; ?>
+<?php include 'view/footer.php'; ?>

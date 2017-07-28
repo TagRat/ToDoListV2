@@ -13,16 +13,14 @@
         <h2><?php echo $category_name; ?></h2>
         <table>
             <tr>
-                <th>Code</th>
-                <th>Name</th>
-                <th class="right">Price</th>
+                <th>Task</th>
+                <th class="right">Status</th>
                 <th>&nbsp;</th>
             </tr>
             <?php foreach ($products as $product) : ?>
             <tr>
-                <td><?php echo $product['productCode']; ?></td>
                 <td><?php echo $product['productName']; ?></td>
-                <td class="right"><?php echo $product['listPrice']; ?></td>
+                <td class="right"><?php echo $product['status']; ?></td>
                 <td><form action="." method="post">
                     <input type="hidden" name="action"
                            value="delete_product">

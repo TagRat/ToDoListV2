@@ -1,10 +1,10 @@
 <?php include 'view/header.php'; ?>
 <main>
-    <h1>Add Product</h1>
+    <h1>Add New To Do List Item</h1>
     <form action="index.php" method="post" id="add_product_form">
         <input type="hidden" name="action" value="add_product">
 
-        <label>Category:</label>
+        <label>To Do List:</label>
         <select name="category_id">
         <?php foreach ( $categories as $category ) : ?>
             <option value="<?php echo $category['categoryID']; ?>">
@@ -14,16 +14,13 @@
         </select>
         <br>
 
-        <label>Code:</label>
-        <input type="text" name="code" />
-        <br>
-
-        <label>Name:</label>
+        
+        <label>Task:</label>
         <input type="text" name="name" />
         <br>
 
-        <label>List Price:</label>
-        <input type="text" name="price" />
+        <label>Status:</label>
+        <input type="text" name="status" />
         <br>
 
         <label>&nbsp;</label>
@@ -35,4 +32,4 @@
     </p>
 
 </main>
-<?php include '../view/footer.php'; ?>
+<?php include 'view/footer.php'; ?>

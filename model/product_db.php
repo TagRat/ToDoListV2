@@ -34,17 +34,16 @@ function delete_product($product_id) {
     $statement->closeCursor();
 }
 
-function add_product($category_id, $code, $name, $price) {
+function add_product($category_id, $name, $status) {
     global $db;
     $query = 'INSERT INTO products
-                 (categoryID, productCode, productName, listPrice)
+                 (categoryID, productName, status)
               VALUES
-                 (:category_id, :code, :name, :price)';
+                 (:category_id, :name, :status)';
     $statement = $db->prepare($query);
     $statement->bindValue(':category_id', $category_id);
-    $statement->bindValue(':code', $code);
     $statement->bindValue(':name', $name);
-    $statement->bindValue(':price', $price);
+    $statement->bindValue(':status', $status);
     $statement->execute();
     $statement->closeCursor();
 }
